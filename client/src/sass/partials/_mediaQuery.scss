@@ -1,0 +1,170 @@
+@use './variables' as *;
+
+@media (max-width: 950px) {
+  //   SIDE BAR TO TOP BAR
+
+  html {
+    // adjusting scroll behavior for top nav
+    scroll-padding-top: 10rem;
+  }
+  // top navbar config
+  .header {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .mainContent {
+    margin-left: 0;
+    margin-top: 99.85px;
+  }
+
+  // hide socials
+  .navSocialList {
+    display: none;
+  }
+  // top nav set up
+  .sidebar {
+    flex-direction: column;
+  }
+
+  .navMenu,
+  .navContainer,
+  .navbar {
+    flex-direction: row;
+  }
+
+  // top bar
+  .navMenu {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  // nav links adjustment
+  .navContainer {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .logoContainer {
+    width: 80px;
+  }
+
+  .navbar {
+    margin: 0;
+  }
+
+  //   FOOTER
+  .footerContactContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 1rem;
+  }
+
+  .footerSocial {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 0;
+  }
+
+  .footerContactList {
+    justify-content: center;
+  }
+
+  // GALLERY
+  // modal
+  .modalContainer {
+    width: 100%;
+    top: 100px;
+    height: calc(100% - 100px);
+  }
+
+  .sliderBtnContainer {
+    width: 80%;
+  }
+
+  .sliderContainer {
+    max-width: 550px;
+    height: 450px;
+  }
+}
+
+// mobile menu set up
+@media (max-width: 720px) {
+  .mobileMenu {
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+  }
+
+  .navContainer {
+    position: relative;
+  }
+  .navbar {
+    // positioning
+    position: absolute;
+    top: 80px;
+    right: -11rem;
+    width: 200px;
+    padding: 1rem 1rem;
+
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #000;
+
+    transition: 400ms ease;
+  }
+
+  .menuOpen {
+    right: -1rem;
+  }
+
+  // GALLERY
+  .sliderBtnContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 558px) {
+  // GALLERY
+
+  .sliderContainer {
+    max-width: none;
+    width: 80%;
+  }
+
+  //   FOOTER
+  .footerHours,
+  .footerNav,
+  .footerContact {
+    h4 {
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .footerHrsItem,
+  .footerNavItem,
+  .footerContactItem {
+    text-align: center;
+  }
+  .footerContactContainer {
+    display: block;
+  }
+
+  .footerSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+    gap: 1rem;
+  }
+}

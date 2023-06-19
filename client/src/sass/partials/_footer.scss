@@ -1,0 +1,83 @@
+@use './variables' as *;
+.footer {
+  background-color: rgb(78, 78, 78);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footerBottom {
+  background-color: $black;
+  padding: 1rem 0;
+}
+.footerItem {
+  margin: 1rem 3em;
+  font-size: $sub;
+
+  flex-grow: 1;
+  h4 {
+    font-size: $body;
+    text-align: left;
+    margin-bottom: 0.8rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 50px;
+      height: 1px;
+
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      background-color: $white;
+      transition: 250ms ease;
+    }
+  }
+  &:hover,
+  &:focus-visible {
+    h4::after {
+      width: 100px;
+    }
+  }
+}
+
+.footerHrsList,
+.footerNavList,
+.footerContactList {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.footerHrsItem,
+.footerNavItem,
+.footerContactItem {
+  text-align: left;
+}
+
+.timeSlot {
+  margin-left: 0.5rem;
+}
+
+.footerSocial {
+  margin-top: 1rem;
+  justify-content: start;
+}
+
+// NAVIGATION
+.footerNavItem a {
+  display: block;
+
+  transition: 250ms ease-in-out all;
+  &:hover,
+  &:focus-visible {
+    padding-left: 0.6rem;
+    background-color: rgba(118, 118, 118, 0.343);
+  }
+}

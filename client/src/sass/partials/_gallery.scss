@@ -1,0 +1,180 @@
+@use './variables' as *;
+
+// Gallery
+.galleryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.galleryListItem {
+  width: calc(100% / 4 - 1rem);
+  aspect-ratio: 250/250;
+  min-width: 100px;
+  position: relative;
+  &:hover,
+  &:focus-visible {
+    .imageOverlay {
+      visibility: visible;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(176, 147, 107, 0.453);
+
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 250ms ease all;
+
+  svg {
+    scale: 1.5;
+    fill: $white;
+  }
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  // sidebar set up
+  width: calc(100% - $sidebarWidth);
+  height: 100%;
+
+  background-color: rgba(80, 46, 23, 0.81);
+  display: grid;
+  place-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 350ms ease all;
+}
+
+.openModal {
+  opacity: 1;
+  visibility: visible;
+}
+
+// SLIDER CSS
+
+.carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+  gap: 1rem;
+  color: $white;
+  p {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.modalBtn {
+  border: transparent;
+  transition: $transition;
+  background: transparent;
+  cursor: pointer;
+
+  svg {
+    transition: $transition;
+    fill: $transGrey;
+  }
+  &:hover,
+  &:focus-visible {
+    svg {
+      fill: $white;
+    }
+  }
+}
+.sliderContainer {
+  position: relative;
+  width: 80vh;
+  max-width: 700px;
+  height: 550px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  // left: 0;
+  margin: 0 auto;
+  // right: 0;
+  width: 100%;
+  height: 100%;
+  transition: 300ms ease all;
+}
+
+.prevSlide,
+.nextSlide {
+  position: absolute;
+  height: 100%;
+  width: 5rem;
+  display: grid;
+  place-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.prevSlide {
+  left: 0;
+  &::before {
+    background: rgb(53, 53, 53);
+    background: linear-gradient(
+      90deg,
+      rgba(53, 53, 53, 0.555) 0%,
+      rgba(242, 242, 242, 0) 91%
+    );
+  }
+}
+
+.nextSlide {
+  right: 0;
+  &::before {
+    background: rgb(53, 53, 53);
+    background: linear-gradient(
+      270deg,
+      rgba(53, 53, 53, 0.555) 0%,
+      rgba(242, 242, 242, 0) 91%
+    );
+  }
+  &:hover,
+  &:focus-visible {
+  }
+}

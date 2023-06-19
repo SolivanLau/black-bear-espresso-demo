@@ -1,0 +1,30 @@
+// colors
+$black: #000;
+$white: #fff;
+$transGrey: #ffffff84;
+// font-family
+
+// font-size
+$title: 3.052rem;
+$subtitle: 2.441rem;
+$heading: 1.563rem;
+$body: 1rem;
+$sub: 0.8rem;
+$mini: 0.64rem;
+// component specific
+$sidebarWidth: 300px;
+// animations
+$transition: 250ms ease all;
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes openModal {
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

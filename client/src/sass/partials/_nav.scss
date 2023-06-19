@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+.navMenu,
+.navContainer,
+.navbar,
+.navSocialList {
+  display: flex;
+}
+
+// side bar set up
+.header {
+  position: fixed;
+  left: 0;
+  z-index: 100;
+}
+
+.mainContent {
+  margin-left: $sidebarWidth;
+}
+
+.navMenu {
+  flex-direction: column;
+  width: $sidebarWidth;
+  background-color: #000;
+  height: 100dvh;
+  padding: 1rem;
+}
+
+.navContainer {
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.navbar {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2rem 0;
+
+  //   temp font style
+  font-weight: 700;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.519);
+  text-transform: uppercase;
+
+  font-family: 'Montserrat', sans-serif;
+
+  transition: 200ms ease;
+  &:hover,
+  &:focus-visible {
+    color: white;
+  }
+}
+.navSocialList {
+  justify-content: center;
+  gap: 1rem;
+
+  margin-top: auto;
+}
+.navSocialItem,
+.mobileMenu {
+  transition: 200ms ease;
+  fill: rgba(255, 255, 255, 0.519);
+  &:hover,
+  &:focus-visible {
+    fill: white;
+  }
+}
+.mobileMenu {
+  display: none;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}

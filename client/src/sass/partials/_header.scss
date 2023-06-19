@@ -1,0 +1,65 @@
+@use './variables' as *;
+// Section Header Component
+.sectionHeader {
+  background-color: rgb(40, 40, 40);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  height: 50dvh;
+
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+  }
+
+  &.home {
+    background-image: url(../assets/images/homeBanner.jpg);
+  }
+
+  &.about {
+    background-image: url(../assets/images/aboutBanner.jpg);
+  }
+  &.menu {
+    background-image: url(../assets/images/menuBanner.jpg);
+  }
+  &.gallery {
+    background-image: url(../assets/images/galleryBanner.jpg);
+  }
+  &.contact {
+    background-image: url(../assets/images/contactBanner.jpg);
+  }
+}
+.sectionHeader,
+.sectionHeader .wrapper,
+.overlayFilter {
+  opacity: 0;
+  animation: 750ms ease 100ms fadeIn forwards;
+}
+
+.overlayFilter {
+  backdrop-filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+.subtitle {
+  display: block;
+  font-size: $subtitle;
+}

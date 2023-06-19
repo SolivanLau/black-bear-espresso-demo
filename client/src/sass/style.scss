@@ -1,0 +1,14 @@
+@use './partials/setup';
+@use './partials/variables' as *;
+@use './partials/global';
+
+// components
+@use './partials/nav';
+@use './partials/header';
+@use './partials/footer';
+
+// pages
+@use './partials/gallery';
+@use './partials/contact';
+// media query
+@use './partials/mediaQuery';
