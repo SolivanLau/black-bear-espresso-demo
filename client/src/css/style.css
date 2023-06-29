@@ -233,6 +233,7 @@ html {
 html {
   font-size: 125%;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -309,9 +310,9 @@ img {
 
 .navbar {
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 2rem 0;
+  gap: 1rem;
+  margin: 1rem 0;
+  text-align: center;
   font-weight: 700;
 }
 
@@ -415,6 +416,7 @@ img {
   text-align: center;
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
 }
 
 .footerTop {
@@ -674,6 +676,55 @@ img {
   width: 80%;
   max-width: 700px;
   height: 500px;
+}
+
+.menuNav {
+  margin: 2rem 0;
+}
+
+.menuNavList {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.menuSubNav {
+  min-height: 50px;
+  height: 100%;
+}
+
+.menuSubNavList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: auto;
+}
+
+.menuSection {
+  margin-top: 2rem;
+}
+
+.menuList {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItem,
+.priceGuide {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  justify-content: space-between;
+}
+.menuItem .itemName,
+.priceGuide .itemName {
+  text-align: left;
+}
+.menuItem .price,
+.priceGuide .price {
+  text-align: right;
 }
 
 @media (max-width: 950px) {

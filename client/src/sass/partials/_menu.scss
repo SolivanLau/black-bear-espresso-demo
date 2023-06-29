@@ -1,0 +1,54 @@
+@use './variables' as *;
+
+// MENU NAVIGATION
+.menuNav {
+  margin: 2rem 0;
+}
+.menuNavList {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+// SUB MENU NAV
+.menuSubNav {
+  min-height: 50px;
+  height: 100%;
+}
+.menuSubNavList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: auto;
+}
+// MENU COMPONENTS
+// MENU SECTION
+
+.menuSection {
+  margin-top: 2rem;
+}
+.menuList {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+}
+
+// MENU ITEM
+.menuItem,
+.priceGuide {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  justify-content: space-between;
+
+  .itemName {
+    text-align: left;
+  }
+
+  .price {
+    text-align: right;
+  }
+}
+
+// MENU SECTION
+// DRINK MENU: LAYOUT

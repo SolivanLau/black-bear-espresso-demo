@@ -48,126 +48,242 @@ export const menuData = {
     },
   ],
 
-  menu: [
-    // ESPRESSO
-    {
-      category: 'Espresso',
-      subtitle: '',
-      items: [
-        { itemName: 'Espresso', price: 3.6 },
-        { itemName: 'Espresso Macchiato', price: 3.75 },
-        { itemName: 'Americano', price: 3.75 },
-        { itemName: 'Cortado', price: 3.75 },
-      ],
+  menu: {
+    drink: {
+      //  HOT DRINKS: contains extra espresso array
+      hotDrinks: {
+        navId: 'hotDrinks',
+        category: 'Hot Drinks',
+        subtitle: '',
+        needPriceGuide: true,
+        espressoItems: [
+          { itemName: 'Espresso', price: 3.6 },
+          { itemName: 'Espresso Macchiato', price: 3.75 },
+          { itemName: 'Americano', price: 3.75 },
+          { itemName: 'Cortado', price: 3.75 },
+        ],
+        items: [
+          {
+            itemName: 'Brewed Coffee',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Cappuccino',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Flat White',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Mocha',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'White Mocha',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Hot Chocolate',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'White Hot Chocolate',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+        ],
+      },
+      // TEA
+      tea: {
+        navId: 'tea',
+        category: 'Teas',
+        subtitle: '',
+        needPriceGuide: true,
+        items: [
+          {
+            itemName: 'Loose Leaf Tea',
+            price: 3.49,
+          },
+          {
+            itemName: 'Tea Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'London Fog',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Chai Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Matcha Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+        ],
+      },
+      // COLD DRINKS
+      coldDrinks: {
+        navId: 'coldDrinks',
+        category: 'Cold Drinks',
+        subtitle: '',
+        needPriceGuide: true,
+        items: [
+          {
+            itemName: 'Iced Americano',
+            price: 3.49,
+          },
+          {
+            itemName: 'Cold Brew',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Iced Late',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Iced Mocha',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Iced White Mocha',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Iced Chai Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+          {
+            itemName: 'Iced Matcha Latte',
+            price: 2.75,
+            price12Oz: 3.1,
+            price16Oz: 3.49,
+          },
+        ],
+      },
+      // FRAPPES
+      frappes: {
+        navId: 'frappes',
+        category: 'Frappes',
+        subtitle: '',
+        needPriceGuide: false,
+        items: [
+          {
+            itemName: 'Coffee Frappe',
+            price: 5.95,
+          },
+          {
+            itemName: 'Caramel Frappe',
+            price: 6.45,
+          },
+          {
+            itemName: 'Mocha Frappe',
+            price: 6.45,
+          },
+          {
+            itemName: 'White Mocha Frappe',
+            price: 6.45,
+          },
+          {
+            itemName: 'Chai Frappe',
+            price: 6.45,
+          },
+          {
+            itemName: 'Matcha Frappe',
+            price: 6.95,
+          },
+        ],
+      },
+      // EXTRAS
+      extras: {
+        navId: 'extras',
+        category: 'Extras',
+        subtitle: '',
+        needPriceGuide: false,
+        items: [
+          {
+            itemName: 'Extra Shot',
+            price: 1.25,
+          },
+        ],
+      },
+      // SYRUPS
+      syrups: {
+        navId: 'syrups',
+        category: 'Syrups',
+        subtitle: '',
+        needPriceGuide: false,
+        items: [
+          {
+            itemName: 'Vanilla',
+            price: 0.75,
+          },
+          {
+            itemName: 'Caramel',
+            price: 0.75,
+          },
+          {
+            itemName: 'Hazelnut',
+            price: 0.75,
+          },
+        ],
+      },
+      // ALT MILK
+      altMilk: {
+        navId: 'altMilk',
+        category: 'Alternative Milks',
+        subtitle: '',
+        needPriceGuide: false,
+        items: [
+          { itemName: 'Oat', price: 0.75 },
+          { itemName: 'Almond', price: 0.75 },
+          { itemName: 'Soy', price: 0.75 },
+          { itemName: 'Coconut', price: 0.75 },
+          { itemName: 'Lactose-Free', price: 0.75 },
+        ],
+      },
     },
-    // CLASSIC HOT DRINKS
-    {
-      category: 'Classics',
-      subtitle: '',
-      items: [
-        {
-          itemName: 'Brewed Coffee',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Latte',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Cappuccino',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Flat White',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Mocha',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'White Mocha',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Hot Chocolate',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'White Hot Chocolate',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-      ],
-    },
-    // TEA
-    {
-      category: 'Teas',
-      subtitle: '',
-      items: [
-        {
-          itemName: 'Loose Leaf Tea',
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Tea Latte',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'London Fog',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Chai Latte',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Matcha Latte',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-      ],
-    },
-    // COLD DRINKS
-    {
-      category: 'Cold Drinks',
-      subtitle: '',
-      items: [
-        {
-          itemName: 'Iced Americano',
-          sixteenOz: 3.49,
-        },
-        {
-          itemName: 'Cold Brew',
-          eightOz: 2.75,
-          twelveOz: 3.1,
-          sixteenOz: 3.49,
-        },
-      ],
-    },
-  ],
+    pastries: {},
+    desserts: {},
+  },
 };
 export const galleryData = {
   bannerClass: 'gallery',

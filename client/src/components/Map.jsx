@@ -1,4 +1,9 @@
-import { useLoadScript, GoogleMap, Marker } from '@react-google-maps/api';
+import {
+  useLoadScript,
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} from '@react-google-maps/api';
 import { useMemo } from 'react';
 const Map = () => {
   const { isLoaded } = useLoadScript({
