@@ -1,6 +1,8 @@
 class CustomApiErr extends Error {
-  constructor(message) {
+  constructor(message, info) {
     super(message);
+    this.success = false;
+    this.info = info || `No additional error info`;
   }
 }
 

@@ -7,10 +7,35 @@ const ContactForm = () => {
     email: '',
     msg: '',
   });
+  const sendEmail = async (info) => {
+    // server url
+    const serverURI =
+      import.meta.env.VITE_SERVER_URI || 'http://localhost:3000/api/v1/email';
+
+    // sending req.body via fetch api
+    const response = await fetch(serverURI, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(info),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
+
+  const testCall = async () => {
+    const res = await fetch('http://localhost:3000/api/v1/email');
+    const data = await res.json();
+    console.log(data);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(contactMsg);
+    // console.log(contactMsg);
     // send to server
+    sendEmail(contactMsg);
+    // testCall();
   };
 
   const handleChange = (e) => {

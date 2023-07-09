@@ -1,20 +1,26 @@
-require('dot-env');
-require('express-async-errors');
-
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
-
-// middleware
 const errHandlerMiddleware = require('./middleware/errHandler');
-const notFound = require('./middleware/notFound');
+const notFoundMiddleware = require('./middleware/notFound');
+
+const emailRouter = require('./routes/email');
+// general middleware
+app.use(cors({ options: 'http://localhost:5173' }));
+app.use(express.json());
+
+// router
+app.use('/api/v1/', emailRouter);
+
+// custom middleware
 app.use(errHandlerMiddleware);
-app.use(notFound);
-// app init
+app.use(notFoundMiddleware);
 const port = process.env.PORT || 3000;
-const start = async () => {
+const start = () => {
   try {
     app.listen(port, () => {
-      console.log(`server is listening on port, ${port}...`);
+      console.log(`server running on http://localhost:${port}`);
     });
   } catch (error) {
     console.log(error);
